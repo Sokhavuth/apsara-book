@@ -37,7 +37,7 @@
     background-color: var(--background-dark);
     font: 18px/1.5 StardosStencil, Koulen;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
 .Article{
     display: grid;
@@ -57,6 +57,10 @@
     grid-row: 2 /span 2;
 }
 
+.Article a:nth-child(1) .play-icon{
+    width: 10%;
+}
+
 .Article a img{
     position: absolute;
     top: 0;
@@ -66,10 +70,19 @@
     float: left;
 }
 
+.Article .thumb .play-icon{
+    top: 5px;
+    left: calc(100% - 5px);
+    transform: translate(-100%);
+    width: 15%;
+    height: auto;
+    float: none;
+}
+
 .nav-article{
     text-align: center;
     background-color: var(--background-dark);
-    padding-top: 5px;
+    padding: 10px 0 5px;
 }
 
 .nav-article img{
@@ -79,15 +92,25 @@
 @media screen and (max-width: 600px){
     .feature-post{
         grid-template-columns: 100%;
-        grid-gap: 10px;
-        padding: 10px;
+        grid-gap: 15px;
+        padding: 15px;
     }
 
     .front-ad{
         grid-template-columns: 100%;
     }
 
-    .post-title{
+    .Article{
         grid-template-columns: 100%;
+        padding: 15px;
+    }
+
+    .Article a:nth-child(1){
+        grid-column: 1 /span 1;
+        grid-row: 1 /span 1;
+    }
+
+    .Article a:nth-child(1) .play-icon{
+        width: 15%;
     }
 }

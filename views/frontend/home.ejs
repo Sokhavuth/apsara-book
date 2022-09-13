@@ -37,6 +37,11 @@
     <% for(let article of data.articles){ %>
         <a class="thumb" href="/book/<%= article.key %>">
             <img src="<%= article.thumb %>" />
+            <% if(article.videos){ %>
+                <% if((article.videos !== "")&&(article.videos !== "[]")){ %>
+                <img class="play-icon" src="/images/play.png" />
+                <% } %>
+            <% } %>
         </a>
     <% } %>
 </div>
