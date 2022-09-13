@@ -1,13 +1,7 @@
 /* public/styles/index.css */
 
 .Index header{
-    background-color: var(--background-light);
-}
-.Index header .top-header{
-    padding: 5px;
     background-color: var(--background);
-    color: var(--link);
-    font-size: 16px;
 }
 
 .Index header .top-header .wrapper {
@@ -16,22 +10,12 @@
     align-items: center;
 }
 
-.Index header .top-header .wrapper .social-media{
-    text-align: right;
-}
-
-.Index header .top-header .wrapper .social-media img{
-    height: 25px;
-    float: right;
-    padding-left: 5px;
-}
-
 .Index header .inner{
     display: grid;
     grid-template-columns: 25% auto 25%;
     align-items: center;
     text-align: center;
-    padding: 15px 0;
+    padding: 25px 0;
 }
 
 .Index header .inner .date{
@@ -40,11 +24,11 @@
 }
 
 .Index header .inner .title{
-    font: 40px/1.5 PirataOne, Koulen;
+    font: 50px/1.5 KumarOne, Koulen;
 }
 
 .Index header .inner .title .description{
-    font: 18px/1 StardosStencil, Bayon;
+    font: italic 22px/1 Arial;
 }
 
 .Index header .inner form{

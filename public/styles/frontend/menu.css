@@ -1,18 +1,20 @@
 /* public/styles/frontend/menu.css */
 
 nav{
-    background-color: var(--background-dark);
+    background-color: var(--background-light);
+    border-top: 3px solid black;
+    border-bottom: 1px solid black;
 }
 
 .topnav {
-    background-color: var(--background-dark);
+    background-color: var(--background-light);
     overflow: hidden;
   }
   
   .topnav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 10px 16px;
     text-decoration: none;
@@ -21,8 +23,7 @@ nav{
   }
   
   .topnav a:hover {
-    background-color: black;
-    color: white;
+    background-color: lightgrey;
   }
   
   .topnav a.active {

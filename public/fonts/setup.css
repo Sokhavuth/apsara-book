@@ -33,7 +33,7 @@
 }
 @font-face {
   font-family: Oswald;
-  src: url(Oswald.ttf);
+  src: url(Oswald-light.ttf);
 }
 @font-face {
   font-family: Anton;
@@ -62,4 +62,8 @@
 @font-face {
   font-family: PirataOne;
   src: url(PirataOne.ttf);
+}
+@font-face {
+  font-family: KumarOne;
+  src: url(KumarOne.ttf);
 }

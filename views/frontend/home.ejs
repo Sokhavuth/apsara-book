@@ -14,44 +14,35 @@
         %>
         <% for(let index=0; index<condition; index++){ %>
             <a href="/post/<%= data.items[index].key %>">
-                <img src="<%= data.items[index].thumb %>" />
-                <% if((data.items[index].videos !== "")&&(data.items[index].videos !== "[]")){ %>
-                <img class="play-icon" src="/images/play.png" />
-                <% } %>
-                <p class="title"><%= data.items[index].title %></p>
+                <img src="<%= data.items[index].bookCover %>" />
             </a>
         <%  } %>
     <% } %>
 </div>
 
-<div class="front-ad">
-    <img src="/images/front-ad.png" />
-    <img src="/images/front-ad.png" />
-    <img src="/images/donate-ad.jpg" />
-    <img src="/images/donate-ad.jpg" />
-    <img src="/images/khmerweb-ad.png" />
-    <img src="/images/khmerweb-ad.png" />
+<div class="top-nav">
+    <img src="/images/left.png" />
+    <img src="/images/home.png" />
+    <img src="/images/right.png" />
 </div>
 
-<div class="post-title">
-    <% if(data.items.length > 5){ %>
-        <% for(let index=5; index<data.items.length; index++){ %>
-            <a class="title" href="/post/<%= data.items[index].key %>">
-                <%= data.items[index].title %>
-            </a>
-        <% } %>
+<div class="front-ad">
+    <img src="/images/donate-ad.jpg" />
+    <img src="/images/donate-ad.jpg" />
+</div>
+
+<% if(data.articles){ %>
+<div class="latest-article">Latest Articles</div>
+<div class="Article">
+    <% for(let article of data.articles){ %>
+        <a class="thumb" href="/book/<%= article.key %>">
+            <img src="<%= article.thumb %>" />
+        </a>
     <% } %>
 </div>
-
-<div class="pagination">
-    <p>
-        <% if(data.count - data.page*data.fpostLimit === 1){ %>
-            1 more post
-        <% }else if(data.count - data.page*data.fpostLimit <= 0){ %>
-            no more post
-        <% }else{ %>
-            <%= data.count - data.page*data.fpostLimit %> more posts
-        <% } %>
-    </p>
-    <img class="load" onclick="paginate()" src="/images/loadmore.png" />
+<div class="nav-article">
+    <img src="/images/left.png" />
+    <img src="/images/home.png" />
+    <img src="/images/right.png" />
 </div>
+<% } %>

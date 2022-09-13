@@ -1,0 +1,18 @@
+
+.random-book-wrapper{
+    background-color: var(--background-dark);
+    padding: 40px 0;
+    margin: 40px 0 0px;
+}
+
+.random-book{
+    display: grid;
+    grid-template-columns: calc(25% - 11.25px) calc(25% - 11.25px)
+    calc(25% - 11.25px) calc(25% - 11.25px);
+    grid-gap: 40px 20px;
+}
+
+.random-book a img{
+    width: 100%;
+    float: left;
+}

@@ -28,6 +28,9 @@
                 <a href="/admin/post"><img src="/images/posting.png" /></a>
                 <a href="/admin/post">Post</a>
 
+                <a href="/admin/book"><img src="/images/book.png" /></a>
+                <a href="/admin/book">Book</a>
+
                 <a href="/admin/page"><img src="/images/page.png" /></a>
                 <a href="/admin/page">Page</a>
 
@@ -49,6 +52,8 @@
                 <%- include("./post.ejs") %>
             <% }else if(data.route.includes("/page")){ %>
                 <%- include("./page.ejs") %>
+            <% }else if(data.route.includes("/book")){ %>
+                <%- include("./book.ejs") %>
             <% }else if(data.route.includes("/category")){ %>
                 <%- include("./category.ejs") %>
             <% }else if(data.route.includes("/upload")){ %>

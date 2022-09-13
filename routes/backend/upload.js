@@ -15,8 +15,6 @@ router.get("/", async (req, res) => {
 
     if(user){
         req.myusername = user.title
-        console.log(user)
-
         upload.getPage(req, res)
     }else{
         res.redirect("/admin")

@@ -3,88 +3,77 @@
 .feature-post{
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    grid-gap: 7px;
-    padding: 7px 0 0;
-}
-
-.feature-post a{
-    position: relative;
-    padding-top: 56.25%;
-    display:block;
+    grid-gap: 10px;
+    padding: 10px 0;
 }
 
 .feature-post a img{
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    min-height: 100%;
+    float: left;
 }
 
-.feature-post a .play-icon{
-    width: 20%;
-    min-height: auto;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.top-nav{
+    text-align: center;
+    background-color: var(--background-dark);
+    padding-top: 5px;
 }
 
-.feature-post a .title{
-    position: absolute;
-    bottom: 0px;
-    padding: 5px;
-    color: white;
-    font: 15px/1.5 Oswald, Bayon;
-    text-shadow: 2px 2px 4px #000000;
-    background: -webkit-linear-gradient(bottom, black,transparent);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-
+.top-nav img{
+    height: 25px;
 }
 
 .front-ad{
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 7px;
-    padding: 7px 0 30px;
+    grid-gap: 10px;
+    padding: 30px 0;
 }
 
 .front-ad img{
     width: 100%;
 }
 
-.post-title{
-    display: grid;
-    grid-template-columns: calc(33.33% - 5px) calc(33.33% - 5px) calc(33.33% - 5px);
-    align-items: center;
-    padding: 20px 0 20px 20px;
-    background: var(--background-light);
-}
-
-.post-title .title{
-    display: block;
-    font: 16px/1.5 Oswald, Bayon;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-right: 15px;
-}
-
-.pagination{
+.latest-article{
+    background-color: var(--background-dark);
+    font: 18px/1.5 StardosStencil, Koulen;
     text-align: center;
-    padding-top: 10px;
-    font: 18px/1.5 StardosStencil, Limonf3;
+    padding: 5px;
+}
+.Article{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: rgb(182, 182, 182);
+    padding: 10px;
 }
 
-.pagination p{
-    padding-bottom: 10px;
+.Article .thumb{
+    position: relative;
+    padding-top: 56.25%;
 }
 
-.pagination img:hover{
-    cursor: pointer;
-    opacity: .7;
+.Article a:nth-child(1){
+    grid-column: 2 /span 2;
+    grid-row: 2 /span 2;
+}
+
+.Article a img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.nav-article{
+    text-align: center;
+    background-color: var(--background-dark);
+    padding-top: 5px;
+}
+
+.nav-article img{
+    height: 30px;
 }
 
 @media screen and (max-width: 600px){

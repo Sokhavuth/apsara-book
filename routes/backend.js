@@ -12,6 +12,9 @@ router.use("/post", postRouter)
 const pageRouter = require("./backend/page")
 router.use("/page", pageRouter)
 
+const bookRouter = require("./backend/book")
+router.use("/book", bookRouter)
+
 const categoryRouter = require("./backend/category")
 router.use("/category", categoryRouter)
 

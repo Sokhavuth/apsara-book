@@ -52,7 +52,7 @@ class Post{
     async updatePost(req, res){
         if(req.myuser.role === "Author"){
             const post = await postdb.getPost(req)
-            if(req.myuser.id === post.userid){
+            if(req.myuser.key === post.userid){
                 await postdb.updatePost(req)
             }
         }else{

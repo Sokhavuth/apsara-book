@@ -1,6 +1,6 @@
 // controllers/frontend/home.js
 
-const postdb = require("../../models/post")
+const bookdb = require("../../models/book")
 
 
 class Home{
@@ -9,9 +9,13 @@ class Home{
         setup.pageTitle = "Home"
         setup.route = "/"
 
-        const { posts, length } = await postdb.getPosts(req, setup.fpostLimit)
-        setup.items = posts
+        const query = {"bookCover?ne": null, "bookCover?ne": ""}
+        let { books, length } = await bookdb.getBooks(req, 5, query)
+        setup.items = books
         setup.count = length
+        const bookObj = await bookdb.getBooks(req, 13)
+        setup.articles = bookObj.books
+        setup.randomBooks = await bookdb.getRandomBooks(req, setup.fpostLimit, query)
         setup.page = 1
 
         res.render("base", { data: setup })
