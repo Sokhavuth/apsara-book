@@ -51,9 +51,14 @@ class Book{
             return db - da
         })
 
-        const books = allItems.slice(0, amount)
-        const length = allItems.length
-        return { books, length }
+        if(amount){
+            const books = allItems.slice(0, amount)
+            const length = allItems.length
+            return { books, length }
+        }else{
+            return allItems
+        }
+        
     }
 
     async getRandomBooks(req, amount, query){
@@ -141,6 +146,10 @@ class Book{
         const books = allItems.slice(page*amount, (page + 1)*amount)
         const length = allItems.length
         return { books, length }
+    }
+
+    async getBook(req){
+        return await req.mydb.books.get(req.params.key)
     }
 }
 

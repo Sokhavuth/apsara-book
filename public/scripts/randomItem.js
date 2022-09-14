@@ -2,10 +2,6 @@
 
 function getRandomItems(){
     $(`.random-button img`).attr('src','/images/loading.gif')
-    const requestOptions = {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-    }
       
     fetch('/random')
     .then(response => response.json())

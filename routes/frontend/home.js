@@ -17,5 +17,9 @@ router.get("/random", async (req, res) => {
     home.getRandomItems(req, res)
 })
 
+router.get("/book/:key", async (req, res) => {
+    home.getBook(req, res)
+})
+
 
 module.exports = router

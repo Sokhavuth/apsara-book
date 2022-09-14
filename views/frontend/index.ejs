@@ -67,6 +67,8 @@
     <div class="main region">
         <% if(data.route === "/"){ %>
             <%- include("./home") %>
+        <% }else if(data.route === "/book"){ %>
+            <%- include("./book") %>
         <% } %>
             
     </div>

@@ -27,11 +27,11 @@ function setScreen(video,id,click){
     }
 
     if(click){
-        $('.Post .video .playlist #part'+clicked)
-            .css({'background':'lightgrey', 'color': 'black'})
+        $('.Book .video .playlist #part'+clicked)
+            .css({'background':'var(--background-dark)', 'color': 'black'})
     }
-    $('.Post .video .playlist #part'+id)
-        .css({'background':'rgb(0, 117, 117)', 'color': 'white'})
+    $('.Book .video .playlist #part'+id)
+        .css({'background':'grey', 'color': 'white'})
 
 
     $('.screen').html(iframe)

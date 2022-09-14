@@ -23,6 +23,11 @@
     height: 25px;
 }
 
+.top-nav img:hover{
+    cursor: pointer;
+    opacity: .7;
+}
+
 .front-ad{
     display: grid;
     grid-template-columns: auto auto;
@@ -88,6 +93,11 @@
 
 .nav-article img{
     height: 30px;
+}
+
+.nav-article img:hover{
+    cursor: pointer;
+    opacity: .7;
 }
 
 @media screen and (max-width: 600px){

@@ -45,6 +45,18 @@ class Home{
         setup.randomBooks = await bookdb.getRandomBooks(req, setup.fpostLimit, query)
         res.json(setup)
     }
+
+    async getBook(req, res){
+        const setup = await req.mysetup()
+        setup.pageTitle = "Book page"
+        setup.route = "/book"
+
+        setup.item = await bookdb.getBook(req)
+        const query = {"bookTitle": setup.item.bookTitle}
+        setup.articles = await bookdb.getBooks(req, false, query)
+
+        res.render("base", { data: setup })
+    }
 }
 
 
