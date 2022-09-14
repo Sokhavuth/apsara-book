@@ -1,47 +1,25 @@
 //public/scripts/randomItem.js
-function getItems(type,element,clicked){
-    $(clicked+" .home").attr('src','/images/loading.gif')
-    const data = {
-        type: type,
-    }
+
+function getRandomItems(){
+    $(`.random-button img`).attr('src','/images/loading.gif')
     const requestOptions = {
-        method: 'POST',
+        method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
     }
       
-    fetch('/randomItem', requestOptions)
+    fetch('/random')
     .then(response => response.json())
-    .then(randomItems => {
+    .then(data => {
         let html = ''
-        for(let v=0; v<randomItems.length; v++){
-            if(type === 'video'){
-                html += `<a href="/post/${randomItems[v].id}">`
-            }else if(type === 'job'){
-                html += `<a href="/job/${randomItems[v].id}">`
-            }else{
-                html += `<a href="/book/${randomItems[v].id}">`
-            }
-            
-            if(type === 'books'){
-                html += `<img src="${randomItems[v].bookCover}" />`
-            }else if(type === 'job'){
-                html += `<div>${randomItems[v].title}</div>`
-                html += `<div>${randomItems[v].payable}</div>`
-                html += `<div>Job location: ${randomItems[v].location}</div>`
-                html += `<div>Closing date: ${(new Date(randomItems[v].enddate)).toLocaleDateString('it-IT')}</div>`
-            }else{
-                html += `<img src="${randomItems[v].thumb}" />`
-                if((randomItems[v].video)&&(randomItems[v].video !== "[]")){ 
-                    html += `<img class="play-icon" src="/images/play.png" />`
-                }
-            }
-            
+        
+        for(let book of data.randomBooks){
+            html += `<a href="/book/${book.key}">`
+            html += `<img src="${book.bookCover}" />`
             html += `</a>`
         }
-
-        $(element).html(html)
-        $(clicked+" .home").attr('src','/images/home.png')
+        
+        $(".random-book").html(html)
+        $(`.random-button img`).attr('src','/images/random.png')
     })
     .catch((error) => {
         alert('Error:', error)

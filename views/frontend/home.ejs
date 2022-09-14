@@ -1,7 +1,7 @@
 <!--views/frontend/home.ejs-->
 
 <link rel="stylesheet" href="/styles/frontend/home.css" />
-<script src="/scripts/paginate.js"></script>
+<script src="/scripts/navigate.js"></script>
 
 <div class="feature-post">
     <% if(data.items){ %>
@@ -13,7 +13,7 @@
         }
         %>
         <% for(let index=0; index<condition; index++){ %>
-            <a href="/post/<%= data.items[index].key %>">
+            <a href="/book/<%= data.items[index].key %>">
                 <img src="<%= data.items[index].bookCover %>" />
             </a>
         <%  } %>
@@ -21,9 +21,9 @@
 </div>
 
 <div class="top-nav">
-    <img src="/images/left.png" />
-    <img src="/images/home.png" />
-    <img src="/images/right.png" />
+    <img onclick="navigate.getItems(-1,'.top-nav')" src="/images/left.png" />
+        <img class="home" onclick="navigate.getItems(0,'.top-nav')" src="/images/home.png" />
+        <img onclick="navigate.getItems(1,'.top-nav')" src="/images/right.png" />
 </div>
 
 <div class="front-ad">
@@ -46,8 +46,8 @@
     <% } %>
 </div>
 <div class="nav-article">
-    <img src="/images/left.png" />
-    <img src="/images/home.png" />
-    <img src="/images/right.png" />
+    <img onclick="navigate.getItems(-1,'.nav-article')" src="/images/left.png" />
+    <img class="home" onclick="navigate.getItems(0,'.nav-article')" src="/images/home.png" />
+    <img onclick="navigate.getItems(1,'.nav-article')" src="/images/right.png" />
 </div>
 <% } %>

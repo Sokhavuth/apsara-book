@@ -1,6 +1,8 @@
 <!--views/frontend/random-book.ejs-->
 
 <link rel="stylesheet" href="/styles/frontend/random-book.css" />
+<script src="/scripts/randomItem.js"></script>
+
 <% if(data.randomBooks){ %>
     <div class="title">Random Books</div>
     <div class="random-book region">
@@ -11,6 +13,6 @@
         <% } %>
     </div>
     <div class="random-button">
-        <img src="/images/random.png" />
+        <img onclick="getRandomItems()" src="/images/random.png" />
     </div>
 <% } %>

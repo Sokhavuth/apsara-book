@@ -21,12 +21,28 @@ class Home{
         res.render("base", { data: setup })
     }
 
-    async paginate(req, res){
+    async navigate(req, res){
         const setup = await req.mysetup()
-        const { posts, length } = await postdb.paginate(req, setup.fpostLimit)
+        
+        if(req.params.element == "top_nav"){
+            var query = {"bookCover?ne": null, "bookCover?ne": ""}
+            var { books, length } = await bookdb.navigate(req, 5, query)
+            
+        }else{
+            var query = {}
+            var { books, length } = await bookdb.navigate(req, 13, query)
+        }
+        
         setup.count = length
-        setup.items = posts
-        setup.page = parseInt(req.body.page) + 1
+        setup.items = books
+        res.json(setup)
+    }
+
+    async getRandomItems(req, res){
+        const setup = await req.mysetup()
+
+        const query = {"bookCover?ne": null, "bookCover?ne": ""}
+        setup.randomBooks = await bookdb.getRandomBooks(req, setup.fpostLimit, query)
         res.json(setup)
     }
 }

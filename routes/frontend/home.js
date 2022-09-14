@@ -9,8 +9,12 @@ router.get("/", async (req, res) => {
     home.getPage(req, res)
 })
 
-router.post("/paginate", async (req, res) => {
-    home.paginate(req, res)
+router.post("/navigate/:element", async (req, res) => {
+    home.navigate(req, res)
+})
+
+router.get("/random", async (req, res) => {
+    home.getRandomItems(req, res)
 })
 
 

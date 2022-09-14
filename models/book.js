@@ -128,6 +128,20 @@ class Book{
         const length = allItems.length
         return { books, length }
     }
+
+    async navigate(req, amount, query){
+        const allItems = await this.getAllItems(req, query)
+        allItems.sort((a, b) => {     
+            let da = new Date(a.date)
+            let db = new Date(b.date)
+            return db - da
+        })
+        
+        const page = parseInt(req.body.page)
+        const books = allItems.slice(page*amount, (page + 1)*amount)
+        const length = allItems.length
+        return { books, length }
+    }
 }
 
 
