@@ -23,11 +23,11 @@
                     let index = 0
                     %>
                     <% for(let item of data.articles){ %>
-                        <% if((!prevChapter)||(item.bookChapter !== prevChapter)){ %>
+                        <% if((!prevChapter)||(item.chapter !== prevChapter)){ %>
                         <ol class='chapter' start='<%= chapNumber+1 %>'>
                             <li>
-                            <%= item.bookChapter %>
-                            <% prevChapter = item.bookChapter %>
+                            <%= item.chapter %>
+                            <% prevChapter = item.chapter %>
                             </li>
                         </ol>
                         <% 
@@ -37,17 +37,17 @@
                         <% } %>
     
                         <ol class='article' start='<%= artiNumber+1 %>' >
-                            <li id="<%= item.id %>">
-                                <a href="/book/<%= item.id %>">
+                            <li id="<%= item.key %>">
+                                <a href="/book/<%= item.key %>">
                                     <%= item.title %>
                                 </a>
                             </li>
-                            <% if(data.item.id === item.id){ %>
+                            <% if(data.item.key === item.key){ %>
                                 <script>
-                                $("#<%= item.id %> a").css('color','var(--background)')
-                                $("#<%= item.id %>").css('color','var(--background)')
+                                $("#<%= item.key %> a").css('color','var(--link)')
+                                $("#<%= item.key %>").css('color','var(--link)')
                                 
-                                $("#<%= item.id %>")[0].scrollIntoView({
+                                $("#<%= item.key %>")[0].scrollIntoView({
                                     behavior: "smooth",
                                     block: "center"
                                 })

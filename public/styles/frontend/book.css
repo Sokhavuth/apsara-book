@@ -19,15 +19,15 @@
 }
 
 .Book .sidebar .table-content .title{
-    font: 20px/1.5 Oswald, Koulen;
+    font: 20px/1.5 OswaldBold, Koulen;
     margin-bottom: 30px;
-    color: var(--color);
+    color: darkgreen;
 }
 
 .Book .sidebar .table-content .chapter li{
     list-style-position: inside;
     list-style-type: upper-alpha;
-    font: 18px/1.5 Oswald, Bayon;
+    font: 18px/1.5 OswaldBold, Bayon;
     padding-top: 10px;
 } 
 
@@ -43,7 +43,7 @@
 }
 
 .Book .main .content .title{
-    font: 20px/1.5 Oswald, Bayon;
+    font: 20px/1.5 OswaldBold, Bayon;
     padding-bottom: 20px;
 }
 

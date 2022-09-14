@@ -31,7 +31,7 @@ function setScreen(video,id,click){
             .css({'background':'var(--background-dark)', 'color': 'black'})
     }
     $('.Book .video .playlist #part'+id)
-        .css({'background':'grey', 'color': 'white'})
+        .css({'background':'var(--link)', 'color': 'white'})
 
 
     $('.screen').html(iframe)
