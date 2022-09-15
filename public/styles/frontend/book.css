@@ -3,7 +3,7 @@
 .Book .main{
     padding-top: 20px;
     display: grid;
-    grid-template-columns: auto 65%;
+    grid-template-columns: auto 67%;
     grid-gap: 15px;
 }
 
@@ -89,11 +89,11 @@
     font-size: 16px;
     background: var(--background-dark);
     border: 1px solid white;
-    border-top: none;
+    border-bottom: none;
 }
 
 .Book .main .content .video .playlist .part:last-child{
-    margin-bottom: 0;
+    margin-bottom: 1px solid white;
 }
 
 .Book .main .content .video .playlist .part:hover{
@@ -120,6 +120,22 @@
 
 .hljs-ln-code {
     padding-left: 1em;
+}
+
+blockquote{
+  width:100%;
+  font-style:italic;
+  padding:20px;
+  border-left:8px solid #78C0A8 ;
+  background: rgb(228, 228, 228);
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
 }
 
 @media screen and (max-width: 600px){
