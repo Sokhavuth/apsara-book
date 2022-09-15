@@ -8,9 +8,9 @@ class Search{
         const setup = await req.mysetup()
         setup.pageTitle = "Search page"
         setup.route = "/search"
-        setup.type = "post"
+        setup.type = "book"
 
-        req.body.search_type = "posts"
+        req.body.search_type = "books"
 
         setup.searchResult = await searchdb.searchItems(req, 12)
 

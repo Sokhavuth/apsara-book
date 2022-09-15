@@ -7,17 +7,9 @@
     <% if(data.items){ %>
     <div class="inner region">
             <% for(let item of data.items){ %>
-                
-                <a href="/post/<%= item.key %>">
-                    <img class="thumb" src="<%= item.thumb %>" />
-                    <% if(item.videos){ %>
-                        <% if((item.videos !== "")&&(item.videos !== "[]")){ %>
-                            <img class="play-icon" src="/images/play.png" />
-                        <% } %>
-                    <% } %>
-                    <div class="title"><%= item.title %></div>
+                <a href="/book/<%= item.key %>">
+                    <img class="bookCover" src="<%= item.bookCover %>" />
                 </a>
-                
             <% } %>
     </div>
     <div class="pagination">

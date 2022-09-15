@@ -4,7 +4,7 @@ class Book{
     async getAllItems(req, query={}){
         const category = req.params.category
         if(category){
-            var query = {"categories?contains": category}
+            var query = {"bookCover?ne": null, "bookCover?ne": "", "categories?contains": category}
         }
 
         let result = await req.mydb.books.fetch(query)

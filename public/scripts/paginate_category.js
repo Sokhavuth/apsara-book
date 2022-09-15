@@ -16,14 +16,8 @@ function appendItem(items, data){
     
     if(items){
         for(const item of items){
-            html += `<a href="/post/${item.key}">`
-            html += `<img class="thumb" src="${item.thumb}" />`
-            if(item.videos){
-                if((item.videos !== "")&&(item.videos !== "[]")){
-                    html += `<img class="play-icon" src="/images/play.png" />`
-                }
-            }
-            html += `<div class="title">${item.title}</div>`
+            html += `<a href="/book/${item.key}">`
+            html += `<img class="bookCover" src="${item.bookCover}" />`
             html += `</a>`
         }
     }

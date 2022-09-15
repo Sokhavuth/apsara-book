@@ -1,17 +1,17 @@
 // controllers/frontend/category.js
 
-const postdb = require("../../models/post")
+const bookdb = require("../../models/book")
 
 
 class Category{
-    async getPosts(req, res){
+    async getBooks(req, res){
         const setup = await req.mysetup()
         setup.pageTitle = "Category page"
         setup.route = "/category"
         setup.type = req.params.category
 
-        const { posts, length } = await postdb.getPosts(req, setup.categoryItemLimit)
-        setup.items = posts
+        const { books, length } = await bookdb.getBooks(req, setup.categoryItemLimit)
+        setup.items = books
         setup.count = length
         setup.page = 1
         
@@ -20,9 +20,9 @@ class Category{
 
     async paginate(req, res){
         const setup = await req.mysetup()
-        const { posts, length } = await postdb.paginate(req, setup.categoryItemLimit)
+        const { books, length } = await bookdb.paginate(req, setup.categoryItemLimit)
         setup.count = length
-        setup.items = posts
+        setup.items = books
         setup.page = parseInt(req.body.page) + 1
         res.json(setup)
     }
